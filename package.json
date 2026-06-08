@@ -1,0 +1,12 @@
+{
+  "name": "feature-flag-system",
+  "version": "1.0.0",
+  "description": "Multi-Tenant Feature Flag Management System",
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend-superadmin && npm install && cd ../frontend-admin && npm install && cd ../frontend-user && npm install",
+    "start:backend": "cd backend && npm run dev",
+    "start:superadmin": "cd frontend-superadmin && npm start",
+    "start:admin": "cd frontend-admin && npm start",
+    "start:user": "cd frontend-user && npm start"
+  }
+}
