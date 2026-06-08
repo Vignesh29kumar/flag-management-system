@@ -144,7 +144,7 @@ cd frontend-user && npm start
 
 ### Super Admin
 - URL: `http://localhost:3001`
-- Login: `superadmin@my.com` / `SuperAdmin@123`
+- Login: `` / ``
 - Create organisations and view all organisations
 
 ### Organisation Admin
