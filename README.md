@@ -109,12 +109,12 @@ cd ../frontend-user && npm install
 Edit `backend/.env` if needed:
 
 ```env
-PORT=5000
-MONGO_URI=mongodb://localhost:27017/feature_flag_db
-JWT_SECRET=your_super_secret_jwt_key_change_in_production
+PORT=""
+MONGO_URI=""
+JWT_SECRET=""
 
-SUPER_ADMIN_EMAIL=superadmin@my.com
-SUPER_ADMIN_PASSWORD=SuperAdmin@123
+SUPER_ADMIN_EMAIL=""
+SUPER_ADMIN_PASSWORD=""
 ```
 
 ### 3. Start the backend
