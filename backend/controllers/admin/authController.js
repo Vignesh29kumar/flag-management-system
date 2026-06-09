@@ -75,6 +75,10 @@ const login = async (req, res) => {
       return res.status(401).json({ message: "Invalid credentials." });
     }
 
+    if (!user.isActive) {
+      return res.status(403).json({ message: "Account has been deactivated. Contact super admin." });
+    }
+
     const isMatch = await user.comparePassword(password);
     if (!isMatch) {
       return res.status(401).json({ message: "Invalid credentials." });

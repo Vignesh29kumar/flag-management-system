@@ -1,4 +1,5 @@
 const FeatureFlag = require("../../models/FeatureFlag");
+const Organisation = require("../../models/Organisation");
 
 // POST /api/admin/flags  — Create a new feature flag
 const createFlag = async (req, res) => {
@@ -6,6 +7,12 @@ const createFlag = async (req, res) => {
     const { featureKey, description } = req.body;
     const organisationId = req.user.organisationId;
     const adminId = req.user.id;
+
+    // Check organisation is active
+    const org = await Organisation.findById(organisationId);
+    if (!org || !org.isActive) {
+      return res.status(403).json({ message: "Organisation is inactive. Contact super admin." });
+    }
 
     // Check for duplicate key within same organisation
     const existing = await FeatureFlag.findOne({

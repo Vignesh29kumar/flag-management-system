@@ -28,6 +28,7 @@ const login = (req, res) => {
       message: "Super admin logged in successfully.",
       token,
       role: "super_admin",
+      email: SUPER_ADMIN_EMAIL,
     });
   } catch (error) {
     res.status(500).json({ message: "Login failed.", error: error.message });
