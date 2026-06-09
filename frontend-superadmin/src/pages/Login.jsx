@@ -20,7 +20,9 @@ const Login = () => {
 
     try {
       const data = await superAdminLogin(formData.email, formData.password);
+
       localStorage.setItem("token", data.token);
+      localStorage.setItem("user", JSON.stringify({ email: data.email }));
       navigate("/dashboard");
     } catch (err) {
       setError(err.response?.data?.message || "Login failed. Please try again.");
