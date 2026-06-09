@@ -243,8 +243,7 @@ const Dashboard = () => {
                 Cancel
               </button>
               <button
-                className="btn"
-                style={{ background: "var(--color-danger)", color: "#fff" }}
+                className="btn btn-danger"
                 onClick={handleDelete}
                 disabled={deleting}
               >
